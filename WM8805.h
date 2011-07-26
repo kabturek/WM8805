@@ -40,9 +40,9 @@ namespace arduino{
         uint8_t spdstat;
         // PLL6 
         uint8_t pll6;
+
         WM8805(
             const uint8_t address = 0x3A, 
-            const uint8_t x = 5,
             const bool prescale = 0,
             const uint8_t pll_n = 7,
             const uint8_t pll_n192 = 8,
@@ -87,7 +87,6 @@ namespace arduino{
 
       private:
         const uint8_t _address;
-        const uint8_t _x;
     };
   }
 }

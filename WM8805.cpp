@@ -9,7 +9,6 @@ namespace arduino{
   namespace libraries{
     WM8805::WM8805(
         const uint8_t address, 
-        const uint8_t x,
         const bool prescale,
         const uint8_t pll_n,
         const uint8_t pll_n192,
@@ -21,7 +20,6 @@ namespace arduino{
         const uint8_t pll3_192 
         ) :
       _address(address),
-      _x(x),
       pll1(pll1),
       pll1_192(pll1_192),
       pll2(pll2),
