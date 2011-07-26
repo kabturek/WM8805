@@ -17,14 +17,18 @@ By default the WM8805 is configured to use an external 12mhz oscillator.
 Using
 -----
 There are no examples *yet* - just add the library:
+
     #include <WM8805.h>
 
 Initialize the object:
+
     WM8805 wm;
+
 Look at the header file for constructor options (You have to provide some
 PLL values from the datasheet if your crystal is different than 12mhz)
 
 And in you _setup()_ function call
+
     wm.init()
 
 _WM8805::init()_ only argument is the initially selected input
