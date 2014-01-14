@@ -20,7 +20,7 @@
 #include <Wire.h>
 #include <avr/pgmspace.h>
 #include <stdint.h>
-#include "WProgram.h"
+#include "Arduino.h"
 #include "WM8805.h"
 
 namespace arduino{
@@ -73,7 +73,7 @@ namespace arduino{
     uint8_t WM8805::read(uint8_t register_address){
       uint8_t value = 0;
       Wire.beginTransmission(_address);
-      Wire.send(register_address);
+      Wire.write((byte)register_address);
       // stop transmitting
       Wire.endTransmission();
       // Now do a transfer reading one byte from the LIS3L*
@@ -81,14 +81,14 @@ namespace arduino{
       Wire.requestFrom(_address, (uint8_t) 1);
       if(Wire.available()) // loop through all but the last      
       {
-        value = Wire.receive(); // print the character       
+        value = Wire.read(); // print the character       
       }
       return value;
     }
     uint8_t WM8805::write(uint8_t register_address, uint8_t data){
       Wire.beginTransmission(_address);
-      Wire.send(register_address);
-      Wire.send(data);
+      Wire.write((byte)register_address);
+      Wire.write((byte)data);
       // stop transmitting
       uint8_t ret = Wire.endTransmission();
       return ret;

@@ -20,7 +20,7 @@
 #ifndef WM8805_H
 #define WM8805_H
 
-#include "WProgram.h"
+#include "Arduino.h"
 
 namespace arduino{
   namespace libraries{
