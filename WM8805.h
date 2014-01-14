@@ -69,7 +69,7 @@ namespace arduino{
             const uint8_t pll2 = B11111101,
             const uint8_t pll2_192 = B01001001,
             const uint8_t pll3 = B00110110,
-            const uint8_t pll3_192 = B11000100
+            const uint8_t pll3_192 = B00001100
             );
         void init(uint8_t selected_input = 1);
         uint8_t read(uint8_t register_address);
